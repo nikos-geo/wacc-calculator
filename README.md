@@ -3,10 +3,10 @@ A small python script that estimates the WACC for any publicly traded US company
 
 How it works
 Input	Source / method
-Market cap, beta /	Yahoo Finance (yfinance)
-Total debt, interest expense, tax rate	/ Latest annual balance sheet and income statement
-Risk-free rate	/ US 10-year Treasury yield (^TNX)
-Market risk premium	/ Fixed at 4.46% (Damodaran, January 2026 updated)
+1) Market cap, beta 	are derived from Yahoo Finance (yfinance)
+2) Total debt, interest expense, tax rate	are derived from the latest annual balance sheet and income statement
+3) Risk-free rate	is the US 10-year Treasury yield (^TNX)
+4) Market risk premium	is fixed at 4.46% (Damodaran, January 2026 updated)
 
 Formulas:
 Cost of equity (CAPM) = risk-free rate + beta × market risk premium
@@ -14,14 +14,14 @@ Cost of debt = interest expense / total debt
 WACC = E/(D+E) × cost of equity + D/(D+E) × cost of debt × (1 − tax rate)
 
 How to use it: Enter a ticker symbol when prompted (e.g. JBL). The script prints the WACC along with its inputs:
-For the company JBL:
-WACC: X.XX%
-Market capitalization: ...
-Total debt: ...
-Firm value: ...
-Cost of equity: X.XX%
-Cost of debt: X.XX%
-Tax rate: X.XX%
+1) For the company JBL:
+2) WACC: X.XX%
+3) Market capitalization: ...
+4) Total debt: ...
+5) Firm value: ...
+6) Cost of equity: X.XX%
+7) Cost of debt: X.XX%
+8) Tax rate: X.XX%
 
 Limitations:
 1) The data is unofficial. Yahoo finance data comes from the yfinance library which is not an official API. Fields may be missing or
